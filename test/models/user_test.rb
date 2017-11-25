@@ -23,4 +23,18 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "Nguyen", a.last_name
   end 
 
+  test "should not save without last name" do 
+    a = User.new(first_name: "Quy")
+    assert_not a.save 
+    assert_equal "Last name can't be blank", a.errors.full_messages.to_sentence
+  end 
+
+  test "should not save without first name" do 
+    a = User.new(last_name: "Nguyen")
+    assert_not a.save 
+    assert_equal "First name can't be blank", a.errors.full_messages.to_sentence
+  end 
+
+
+
 end
