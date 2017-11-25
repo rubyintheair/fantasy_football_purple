@@ -1,1 +1,8 @@
 <h1>This is all Users path. <br>Find me in Users Controller, action index<br>Hello gai Quy! Good job</h1>
+
+<% @users.each do |user| %>
+  <div>
+    <%= user.first_name %>
+    <%= user.last_name %>
+  </div>
+<% end %>
