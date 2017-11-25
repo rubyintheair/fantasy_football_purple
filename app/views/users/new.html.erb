@@ -1,0 +1,6 @@
+<h1>Hello world, this is where you can create new user</h1>
+<%= form_for User.new do |f| %>
+  <%= f.text_field :first_name, placeholder: "First name" %>
+  <%= f.text_field :last_name, placeholder: "Last name" %>
+  <%= f.submit "Submit" %>
+<% end %>
