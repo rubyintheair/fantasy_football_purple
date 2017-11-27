@@ -21,7 +21,7 @@ class GameItemTest < ActiveSupport::TestCase
     assert_equal "Question can't be blank and Question has already been taken", a.errors.full_messages.to_sentence
   end 
 
-  test "should not save with farmililar question" do 
+  test "should not save with the same question" do 
     a = GameItem.new(name: "test", question: "how")
     assert a.save 
     b = GameItem.new(name: "hihi", question: "how")
