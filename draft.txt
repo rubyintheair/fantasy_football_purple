@@ -1,0 +1,5 @@
+a = User.first
+b = Team.first 
+c = a.team_plays.new(team: b)
+c.save => true
+e = a.team_plays.first.team.name
