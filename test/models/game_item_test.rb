@@ -6,7 +6,7 @@ class GameItemTest < ActiveSupport::TestCase
   # end
 
   test "can create with name and guidance" do 
-    a = GameItem.create(name: "Test", guidance: "This is just a test")
+    a = GameItem.create(name: "Test", guidance: "This is just a test", question: "Hahahah")
     assert a
   end 
 
