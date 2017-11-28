@@ -8,4 +8,7 @@ class User < ApplicationRecord
   def add_teammate(another_user)
     teammates << another_user
   end 
+
+
 end
+
