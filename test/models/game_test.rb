@@ -4,10 +4,10 @@ class GameTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-  test "can not create a game with owner team or guest team or game_item or all" do 
+  test "can not create a game without owner team or guest team or game_item or match_id or all" do 
     game = Game.new
     assert_not game.save
-    assert_equal "Owner team must exist, Guest team must exist, and Game item must exist", game.errors.full_messages.to_sentence
+    assert_equal "Owner team must exist, Guest team must exist, Game item must exist, and Match must exist", game.errors.full_messages.to_sentence
     game_item = GameItem.first 
     assert game_item
     team_1 = TeamPlay.first 
