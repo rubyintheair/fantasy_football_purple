@@ -11,3 +11,9 @@
   User.create(first_name: "#{('a'..'z').to_a.shuffle[0,8].join}", last_name: "#{('a'..'z').to_a.shuffle[0,8].join}")
 end 
 
+count = 0
+while count < User.count 
+  count += 1
+  TeamPlay.create(name: "#{('a'..'z').to_a.shuffle[0,8].join}", user_id: count, teammate_id: (count += 1))
+end 
+
