@@ -23,13 +23,11 @@ class GameTest < ActiveSupport::TestCase
   test "can find out winner and loser" do 
     game = Game.first 
     assert game 
+    puts game 
     game.owner_score = 2
-    game.guest_score = 1
-    game.save 
-    assert game 
-    assert_equal game.winner, game.owner_team 
-    assert_equal game.loser, game.guest_team 
-
-
+    game.guest_score = 1 
+    assert_equal game.winner, game.owner_team #it returns true when I test on rails c (code: game.winner == game.owner_team)
+    assert_equal game.loser, game.guest_team  #it returns true when I test on rails c (code: game.loser == game.guest_team)
   end 
 end
+
