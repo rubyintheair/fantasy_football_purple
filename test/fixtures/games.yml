@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  owner_team_id: 1
+  guest_team_id: 1
+  game_item_id: 1
+  score: 1.5
+
+two:
+  owner_team_id: 1
+  guest_team_id: 1
+  game_item_id: 1
+  score: 1.5
