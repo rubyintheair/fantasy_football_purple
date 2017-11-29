@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+string = "#{('a'..'z').to_a.shuffle[0,8].join}"
 
-10.times do 
+20.times do 
   User.create(first_name: "#{('a'..'z').to_a.shuffle[0,8].join}", last_name: "#{('a'..'z').to_a.shuffle[0,8].join}")
 end 
 
@@ -16,4 +17,18 @@ while count < User.count
   count += 1
   TeamPlay.create(name: "#{('a'..'z').to_a.shuffle[0,8].join}", user_id: count, teammate_id: (count += 1))
 end 
+
+10.times do 
+  GameItem.create(name: "#{('a'..'z').to_a.shuffle[0,8].join}", 
+                  question: "#{('a'..'z').to_a.shuffle[0,8].join}")
+end 
+
+count = 0 
+while count < TeamPlay.count 
+  count += 1
+  Match.new(owner_team: TeamPlay.where(id: count).first, guest_team: TeamPlay.where(id: count += 1).first)
+end  
+
+
+
 

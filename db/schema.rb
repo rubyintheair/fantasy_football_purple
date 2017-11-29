@@ -51,22 +51,6 @@ ActiveRecord::Schema.define(version: 20171128111949) do
     t.integer "guest_team_id"
   end
 
-  create_table "single_play_news", force: :cascade do |t|
-    t.string "name"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "team_id"
-  end
-
-  create_table "single_plays", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_single_plays_on_user_id"
-  end
-
   create_table "team_plays", force: :cascade do |t|
     t.integer "user_id"
     t.integer "team_id"
@@ -94,5 +78,4 @@ ActiveRecord::Schema.define(version: 20171128111949) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "single_plays", "users"
 end
