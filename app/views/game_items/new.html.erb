@@ -1,0 +1,15 @@
+<h1>Welcome to GameItem page</h1>
+
+<div>
+  <%= form_for GameItem.new do |f| %>
+    <div class="field">
+      <%= f.text_field :name, placeholder: "Name" %>
+    </div>
+    <div class="field">
+      <%= f.text_field :question, placeholder: "Question" %>
+    </div>
+    <div>
+      <%= f.submit "Submit", class: "button is-primary"%>
+    </div>
+  <% end %>
+</div>
