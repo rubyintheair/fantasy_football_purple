@@ -1,0 +1,8 @@
+<h1>Welcome to GameItem Index page</h1>
+
+<% @game_items.each do |game_item| %>
+  <div>
+    <%= game_item.name %>
+    <%= game_item.question %>
+  </div>
+<% end %>

@@ -9,6 +9,8 @@ class User < ApplicationRecord
     teammates << another_user
   end 
 
+  
+
 
 end
 
