@@ -7,6 +7,15 @@
     <div class="field">
       <%= f.text_field :last_name, placeholder: "Last name" %>
     </div>
+    <div class="field">
+      <%= f.text_field :email, placeholder: "Email" %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password, placeholder: "Password" %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
+    </div>
     <div>
       <%= f.submit "Submit", class: "button is-primary" %>
     </div>
