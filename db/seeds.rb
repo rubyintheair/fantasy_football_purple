@@ -10,27 +10,39 @@
 
 #create Users
 20.times do 
-  User.create(first_name: "#{('a'..'z').to_a.shuffle[0,8].join}", last_name: "#{('a'..'z').to_a.shuffle[0,8].join}")
+  User.create(
+    first_name: Faker::HowIMetYourMother.character, 
+    last_name: Faker::OnePiece.character
+    )
 end 
 
 #create TeamPlay
 count = 0
 while count < User.count 
   count += 1
-  TeamPlay.create(name: "#{('a'..'z').to_a.shuffle[0,8].join}", user_id: count, teammate_id: (count += 1))
+  TeamPlay.create(
+    name: Faker::Pokemon.name, 
+    user_id: count, 
+    teammate_id: (count += 1)
+    )
 end 
 
 #create GameItems
 10.times do 
-  GameItem.create(name: "#{('a'..'z').to_a.shuffle[0,8].join}", 
-                  question: "#{('a'..'z').to_a.shuffle[0,8].join}")
+  GameItem.create(
+    name: Faker::Pokemon.move, 
+    question: Faker::OnePiece.quote
+    )
 end 
 
 #create Matches
 count = 0 
 while count < TeamPlay.count 
   count += 1
-  Match.create(owner_team: TeamPlay.where(id: count).first, guest_team: TeamPlay.where(id: count += 1).first)
+  Match.create(
+    owner_team: TeamPlay.where(id: count).first, 
+    guest_team: TeamPlay.where(id: count += 1).first
+    )
 end  
 
 #create Games
