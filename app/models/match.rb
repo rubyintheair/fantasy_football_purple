@@ -1,6 +1,7 @@
 class Match < ApplicationRecord
   belongs_to :owner_team, class_name: "TeamPlay"
   belongs_to :guest_team, class_name: "TeamPlay"
+  belongs_to :user
   has_many :games, dependent: :destroy
   validate :check_games
   validate :check_team_member_match

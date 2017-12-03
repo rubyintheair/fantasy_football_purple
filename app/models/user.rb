@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :teammates, through: :team_plays 
   has_many :single_play_news, dependent: :destroy
   has_many :teams, dependent: :destroy
+  has_many :matches, dependent: :destroy
   has_secure_password
 
   def add_teammate(another_user)
