@@ -1,5 +1,4 @@
-<h1>This is all Users path. <br>Find me in Users Controller, action index</h1>
-<br>
+
 
 <% @users.in_groups_of(2, false).each do |group| %>
   <div class="columns">
@@ -8,8 +7,9 @@
         First name: <%= user.first_name %>
         <br>
         Last name: <%= user.last_name %>
-        <%= form_for User.find_by(id: session[:user_id]).teamplays.build(teammate: user) do |f| %>
-          <%= f.text_field :name, placeholder: "Team's name"%>
+        <br>
+        <%= form_for current_user.team_plays.build(teammate: user) do |f| %>
+          <%= f.text_field :name, placeholder: "Team name" %>
           <%= f.hidden_field :teammate_id %>
           <button class="button is-small">Add Teammate</button>
         <% end %>

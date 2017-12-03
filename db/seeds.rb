@@ -9,10 +9,13 @@
 
 
 #create Users
-20.times do 
+10.times do 
   User.create(
     first_name: Faker::HowIMetYourMother.character, 
-    last_name: Faker::OnePiece.character
+    last_name: Faker::Book.author,
+    email: Faker::Internet.email,
+    password: "1234",
+    password_confirmation: "1234"
     )
 end 
 
@@ -29,9 +32,10 @@ end
 
 #create GameItems
 10.times do 
+  # faker = Faker::Pokemon.move 
   GameItem.create(
-    name: Faker::Pokemon.move, 
-    question: Faker::OnePiece.quote
+    name: "#{('a'..'z').to_a.shuffle[0,8].join}", 
+    question: "#{('a'..'z').to_a.shuffle[0,8].join}"
     )
 end 
 
@@ -39,7 +43,9 @@ end
 count = 0 
 while count < TeamPlay.count 
   count += 1
+  count_user = 0
   Match.create(
+    user_id: count_user += 1,
     owner_team: TeamPlay.where(id: count).first, 
     guest_team: TeamPlay.where(id: count += 1).first
     )
