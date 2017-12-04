@@ -5,7 +5,7 @@
       <% group.each do |game_item| %>
         <div class="column">
           <%= f.radio_button :game_item_id, game_item.id %>
-          Game <%= game_item.name %>
+          Game: <%= game_item.name %>
           <br>
           Question: <%= game_item.question %>
         </div>

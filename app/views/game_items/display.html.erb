@@ -1,12 +1,14 @@
 Name of game: <%= @game_item.name %><br>
-Question: <%= @game_item.question %><br>
+Question: <%= @game_item.question %><br><br>
 <% count = 0 %>
 <%= form_for @game do |f| %>
   <% GameItem::ANSWERS.each do |answer| %>
-    <%= answer %><br>
     <% count += 1 %>
-    <%= f.radio_button :answer_order, count %>
+    <%= f.radio_button :answer, count %>
+    <%= answer %><br>
   <% end %>
+  <br>
+  <%= f.submit "Submit", class: "button is-primary" %>
 <% end %>
 
 
