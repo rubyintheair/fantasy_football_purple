@@ -31,11 +31,13 @@ while count < User.count
 end 
 
 #create GameItems
+count = 0
 10.times do 
   # faker = Faker::Pokemon.move 
+  count += 1
   GameItem.create(
-    name: "#{('a'..'z').to_a.shuffle[0,8].join}", 
-    question: "#{('a'..'z').to_a.shuffle[0,8].join}"
+    name: Faker::Pokemon.name + count.to_s, 
+    question: Faker::HarryPotter.quote + count.to_s
     )
 end 
 

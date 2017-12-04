@@ -1,0 +1,17 @@
+
+<%= form_for @match.games.new do |f| %>
+  <% @game_items.in_groups_of(2, false).each do |group| %>
+    <div class="columns">
+      <% group.each do |game_item| %>
+        <div class="column">
+          <%= f.radio_button :game_item_id, game_item.id %>
+          Game <%= game_item.name %>
+          <br>
+          Question: <%= game_item.question %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <%= f.submit "Submit", class: "button is-primary" %>
+<% end %>
+

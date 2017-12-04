@@ -3,7 +3,7 @@ class Game < ApplicationRecord
   belongs_to :guest_team, class_name: "TeamPlay"
   belongs_to :game_item
   belongs_to :match
-  validate :check_team_member
+ # validate :check_team_member
  # has_one :line_result 
 
   def check_team_member

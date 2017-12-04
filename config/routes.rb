@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :matches 
+  resources :games  
   resources :game_items
   resources :team_plays
 
