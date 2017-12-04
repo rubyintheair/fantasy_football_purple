@@ -1,0 +1,35 @@
+
+<%= form_for Match.new do |f| %>
+  <%= f.submit "Submit", class: "button is-primary"%>
+  <div class="columns">
+    <div class="column">
+      Owner teams
+      <% @owner_teams.each do |owner_team| %>
+        Name: <%= owner_team.name %>
+        <br>
+        Host: <%= owner_team.user.first_name%>
+        <br>
+        Teammate: <%= owner_team.teammate.first_name%>
+        <br>
+        <%= f.radio_button :owner_team_id, owner_team.id %>
+        <br><br>
+      <% end %>
+    </div>
+
+    <br><br><br>
+    <div class="column">
+      Guest team
+      <% @guest_teams.each do |guest_team| %>
+        Name: <%= guest_team.name %>
+        <br>
+        Host: <%= guest_team.user.first_name%>
+        <br>
+        Teammate: <%= guest_team.teammate.first_name%>
+        <br>
+        <%= f.radio_button :guest_team_id, guest_team.id %>
+        <br>
+        <br>
+      <% end %>
+    </div>
+  </div>
+<% end %>
