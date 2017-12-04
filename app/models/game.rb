@@ -3,13 +3,7 @@ class Game < ApplicationRecord
   belongs_to :guest_team, class_name: "TeamPlay"
   belongs_to :game_item
   belongs_to :match
-  ANSWERS = ["A. You are so beautiful",
-  "B. That is reason why I love myself so much!",
-  "C. You are so crazy and I love it",
-  "D. This game is creative",
-  "E. Ahihi! I know"
-  ]
-  enum answers: ANSWERS
+
 
  # validate :check_team_member
  # has_one :line_result 

@@ -3,6 +3,10 @@ class GameItemsController < ApplicationController
     @game_items = GameItem.all 
   end 
 
+  def show
+    @game_item = GameItem.find(params[:id])
+  end 
+
   def new 
   end 
 
