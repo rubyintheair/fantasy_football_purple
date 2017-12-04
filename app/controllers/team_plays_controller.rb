@@ -1,4 +1,8 @@
 class TeamPlaysController < ApplicationController
+  def index 
+    @teams = TeamPlay.all 
+  end 
+
   def new 
   end 
   
