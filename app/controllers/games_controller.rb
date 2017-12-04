@@ -7,13 +7,16 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @match = @game.match 
     @game.answer = params[:answer]
+    if @game.answer.to_i == 3
+      @game.owner_score += 1
+    end 
     if @game.save 
       if @match.games.count < 4
         flash[:success] = "Choose next game"
         redirect_to new_game_path
       else
-        flash[:success] = "Ohh! Congratulations!!! Your team have completed the Match"
-        redirect_to root_path
+        flash[:success] = "Ohh! Congratulations!!! We have completed the Match"
+        redirect_to result_path(:match_id => @match.id)
       end 
     else 
       flash[:error] = "#{@game.errors.full_messages.to_sentence}"

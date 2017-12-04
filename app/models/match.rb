@@ -6,6 +6,21 @@ class Match < ApplicationRecord
   validate :check_games
   # validate :check_team_member_match
   
+  def owner_score
+    games.select {|game| game.owner_score}.reduce(0) {|sum, score| sum + score }
+  end 
+
+  def guest_score
+    games.select {|game| game.guest_score}.reduce(0) {|sum, score| sum + score }
+  end 
+
+  def self.winner
+    owner_score > guest_score ? owner_team : guest_team 
+  end 
+
+  def self.loser 
+    owner_score < guest_score ? guest_team : owner_team 
+  end 
 
   def check_games
     if games.size > 3

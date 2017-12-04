@@ -2,6 +2,13 @@ class MatchesController < ApplicationController
   def index 
   end 
 
+  def result 
+    @match = Match.find(params[:match_id])
+    @line_result = @match.games 
+    @winner = @match.winner 
+    @loser = @match.loser
+  end 
+
   def new 
     @owner_teams = TeamPlay.where(user_id: current_user.id)
     @guest_teams = TeamPlay.where("user_id != ? AND teammate_id != ?", current_user.id, current_user.id)

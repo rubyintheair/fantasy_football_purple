@@ -14,11 +14,5 @@ class Game < ApplicationRecord
     end 
   end 
 
-  def winner
-    owner_score > guest_score ? owner_team : guest_team 
-  end 
-
-  def loser 
-    owner_score < guest_score ? guest_team : owner_team 
-  end 
+  
 end

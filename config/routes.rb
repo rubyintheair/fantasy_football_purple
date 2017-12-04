@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "logout" => "sessions#destroy"
 
   get "display" => "game_items#display"
+  get "result" => "matches#result"
 
   resources :users
   resources :matches 
