@@ -3,7 +3,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   has_many :team_plays, dependent: :destroy 
   has_many :teammates, through: :team_plays 
-  has_many :single_play_news, dependent: :destroy
+#  has_many :single_play_news, dependent: :destroy
   has_many :teams, dependent: :destroy
   has_many :matches, dependent: :destroy
   has_secure_password

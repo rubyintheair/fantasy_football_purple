@@ -4,7 +4,10 @@ class MatchesController < ApplicationController
 
   def new 
     @owner_teams = TeamPlay.where(user_id: current_user.id)
-    @guest_teams = TeamPlay.where.not("user_id = ? AND teammate_id = ?", current_user.id, current_user.id)
+    @guest_teams = TeamPlay.where("user_id != ? AND teammate_id != ?", current_user.id, current_user.id)
+    @game_items_first = GameItem.all[0..9]
+    @game_items_middle = GameItem.all[10..19]
+    @game_items_last = GameItem.all[20..29]
   end 
 
   def create 

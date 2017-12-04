@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create 
     if user = User.find_by(email: params[:email])
       if user.authenticate(params[:password])
-        login(user)
+        log_in(user)
         flash[:success] = "Login"
       else 
         flash[:error] = "Invalid password"
