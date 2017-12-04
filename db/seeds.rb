@@ -45,9 +45,9 @@ while count < TeamPlay.count
   count += 1
   count_user = 0
   Match.create(
-    user_id: count_user += 1,
+    user_id: TeamPlay.where(id: count).first.user.id,
     owner_team: TeamPlay.where(id: count).first, 
-    guest_team: TeamPlay.where(id: count += 1).first
+    guest_team: TeamPlay.where(id: count += 1).first  
     )
 end  
 
