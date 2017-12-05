@@ -1,7 +1,7 @@
-# README
-[x] User can sign up, log in and log out
-[x] User can create team with 2 members
-[ ] User can play by only themself
+
+- [x] User can sign up, log in and log out
+- [x] User can create team with 2 members
+- [ ] User can play by only themself
 [x] User can choose competitor team
 [x] User can create a Match which includes 3 games
 [x] User can choose GameItems
