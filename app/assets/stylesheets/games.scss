@@ -1,3 +1,12 @@
 // Place all the styles related to the Games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body.games.new {
+  background-image: url("https://img00.deviantart.net/8a58/i/2016/351/c/e/kirby_s_20th_anniversary_by_torkirby-d4xuruy.png"); 
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
