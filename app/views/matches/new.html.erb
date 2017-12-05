@@ -2,6 +2,7 @@
 Choose the competitor <br><br>
 <div>
   <%= form_for Match.new do |f| %>
+    <%= f.submit "Submit", class: "button is-primary"%>
     <div class="columns">
       <div class="column">
         Owner teams<br><br>
@@ -31,6 +32,5 @@ Choose the competitor <br><br>
         <% end %>
       </div>
     </div>
-    <%= f.submit "Submit", class: "button is-primary"%>
   <% end %>
 </div>
