@@ -1,9 +1,19 @@
 
-
-Team <%= TeamPlay.where(id: @match.owner_team_id).first.name.capitalize %> (Your team): <%= @owner_score %><br>
-Team <%= TeamPlay.where(id: @match.guest_team_id).first.name.capitalize %>: <%= @guest_score %><br>
-<% if @owner_score != @guest_score %>
-  Winner is <%= @winner = @owner_score > @guest_score ? @match.onwer_team.name : @match.guest_team.name %> team 
-<% else %>
-  Owner team draw guest team 
-<% end %>
+<div class="columns is-centered">
+  <div class="column is-5">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header_title">  Result  </div>
+      </div>
+      <div class = "general-card">
+        - Team <%= TeamPlay.where(id: @match.owner_team_id).first.name.capitalize %> (Your team): <%= @owner_score %><br>
+        - Team <%= TeamPlay.where(id: @match.guest_team_id).first.name.capitalize %>: <%= @guest_score %><br>
+        <% if @owner_score != @guest_score %>
+        -  Winner is <%= @winner = @owner_score > @guest_score ? @match.onwer_team.name : @match.guest_team.name %> team 
+        <% else %>
+          Owner team draw guest team 
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
