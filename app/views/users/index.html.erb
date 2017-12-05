@@ -4,15 +4,17 @@
   <div class="columns">
     <% group.each do |user| %>
       <div class="column is-half">
-        First name: <%= user.first_name %>
-        <br>
-        Last name: <%= user.last_name %>
-        <br>
-        <%= form_for current_user.team_plays.build(teammate: user) do |f| %>
-          <%= f.text_field :name, placeholder: "Team name" %>
-          <%= f.hidden_field :teammate_id %>
-          <button class="button is-small">Add Teammate</button>
-        <% end %>
+        <div class="card general_card">
+          First name: <%= user.first_name %>
+          <br>
+          Last name: <%= user.last_name %>
+          <br>
+          <%= form_for current_user.team_plays.build(teammate: user) do |f| %>
+            <%= f.text_field :name, placeholder: "Create team name" %>
+            <%= f.hidden_field :teammate_id %>
+            <button class="button is-small">Add Teammate</button>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>

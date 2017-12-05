@@ -1,14 +1,22 @@
-
-<div>
-  <%= form_tag login_path do %>
-    <div class="field">
-      <%= text_field_tag :email, params[:email], placeholder: "Email" %>
+  
+<div class="columns is-centered">
+  <div class="column is-3">
+    <div class="card">
+    <div class="card-header">
+      <div class="card-header-title">Log in</div>
     </div>
-    <div class="field">
-      <%= password_field_tag :password, nil, placeholder: "Password" %>
+    <div class="general-form">
+      <%= form_tag login_path do %>
+        <div class="field general-field">
+          <%= text_field_tag :email, params[:email], placeholder: "Email" %>
+        </div>
+        <div class="field general-field">
+          <%= password_field_tag :password, nil, placeholder: "Password" %>
+        </div>
+        <div>
+          <%= submit_tag "Log in", class: "button is-primary" %>
+        </div>
+      <% end %>
     </div>
-    <div>
-      <%= submit_tag "Log in", class: "button is-primary" %>
-    </div>
-  <% end %>
+  </div>
 </div>

@@ -14,6 +14,49 @@
  *= require_self
  */
 
+ @import "bulma-variables";
  @import "bulma";
  @import "home";
  @import "users";
+ @import "matches";
+ @import "games";
+ @import "game_items";
+ @import "team_plays";
+
+ input {
+   font-size: 16px;
+   width: 200px;
+ }
+
+ .button, button {
+    margin-bottom: 10px;
+ }
+
+
+.general-form {
+  margin: 10px;
+  margin-top: 40px;
+ .general-field {
+    margin: 10px 20px;
+    height: 50px;
+  }
+}
+
+ .navbar {
+    background-color: $firstcolor;
+    opacity: 0.8;
+    a {
+        color: white;
+    }
+}
+
+  .card {
+    margin-top: 40px;
+  }
+
+  .general_card {
+    margin: 20px;
+    padding: 20px;
+    border: solid 1px black;
+    font-size: 18px;
+  }

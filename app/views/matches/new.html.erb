@@ -7,13 +7,15 @@ Choose the competitor <br><br>
       <div class="column">
         Owner teams<br><br>
         <% @owner_teams.each do |owner_team| %>
-          <%= f.radio_button :owner_team_id, owner_team.id %>
-          Name: <%= owner_team.name %>
-          <br>
-          Host: <%= owner_team.user.first_name%>
-          <br>
-          Teammate: <%= owner_team.teammate.first_name%>
-          <br><br>
+          <div class="card general_card">
+            <%= f.radio_button :owner_team_id, owner_team.id %>
+            Name: <%= owner_team.name %>
+            <br>
+            Host: <%= owner_team.user.first_name%>
+            <br>
+            Teammate: <%= owner_team.teammate.first_name%>
+            <br><br>
+          </div>
         <% end %>
       </div>
 
@@ -21,14 +23,16 @@ Choose the competitor <br><br>
       <div class="column">
         Guest team<br><br>
         <% @guest_teams.each do |guest_team| %>
-          <%= f.radio_button :guest_team_id, guest_team.id %>
-          Name: <%= guest_team.name %>
-          <br>
-          Host: <%= guest_team.user.first_name%>
-          <br>
-          Teammate: <%= guest_team.teammate.first_name%>
-          <br>
-          <br>
+          <div class="card general_card">
+            <%= f.radio_button :guest_team_id, guest_team.id %>
+            Name: <%= guest_team.name %>
+            <br>
+            Host: <%= guest_team.user.first_name%>
+            <br>
+            Teammate: <%= guest_team.teammate.first_name%>
+            <br>
+            <br>
+          </div>
         <% end %>
       </div>
     </div>

@@ -1,23 +1,33 @@
-<h1>Hello world, this is where you can create new user</h1>
-<div>
-  <%= form_for User.new do |f| %>
-    <div class="field">
-      <%= f.text_field :first_name, placeholder: "First name" %>
+
+<div class="columns is-centered">
+  <div class="column is-3">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-header-title">Sign up</div>
+      </div>
+      <div class="general-form">
+        <%= form_for User.new do |f| %>
+          <div class="field general-field">
+            <%= f.text_field :first_name, placeholder: "First name" %>
+          </div>
+          <div class="field general-field">
+            <%= f.text_field :last_name, placeholder: "Last name" %>
+          </div>
+          <div class="field general-field">
+            <%= f.text_field :email, placeholder: "Email" %>
+          </div>
+          <div class="field general-field">
+            <%= f.password_field :password, placeholder: "Password" %>
+          </div>
+          <div class="field general-field">
+            <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
+          </div>
+          <div>
+            <%= f.submit "Submit", class: "button is-primary" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <div class="field">
-      <%= f.text_field :last_name, placeholder: "Last name" %>
-    </div>
-    <div class="field">
-      <%= f.text_field :email, placeholder: "Email" %>
-    </div>
-    <div class="field">
-      <%= f.password_field :password, placeholder: "Password" %>
-    </div>
-    <div class="field">
-      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
-    </div>
-    <div>
-      <%= f.submit "Submit", class: "button is-primary" %>
-    </div>
-  <% end %>
+  </div>
 </div>
+
