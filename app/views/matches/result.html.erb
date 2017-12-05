@@ -1,7 +1,7 @@
 
 
-Owner score: <%= @owner_score %><br>
-Guest score: <%= @guest_score %><br>
+Team <%= TeamPlay.where(id: @match.owner_team_id).first.name.capitalize %> (Your team): <%= @owner_score %><br>
+Team <%= TeamPlay.where(id: @match.guest_team_id).first.name.capitalize %>: <%= @guest_score %><br>
 <% if @owner_score != @guest_score %>
   Winner is <%= @winner = @owner_score > @guest_score ? @match.onwer_team.name : @match.guest_team.name %> team 
 <% else %>

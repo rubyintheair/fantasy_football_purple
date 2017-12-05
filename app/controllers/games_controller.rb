@@ -11,11 +11,11 @@ class GamesController < ApplicationController
       @game.owner_score += 1
     end 
     if @game.save 
-      if @match.games.count < 4
-        flash[:success] = "Choose next game #{@game.owner_score}"
+      if @match.games.count < 3
+        flash[:success] = "Next round! Choose game! Your team's score: #{@game.owner_score}"
         redirect_to new_game_path
       else
-        flash[:success] = "Ohh! Congratulations!!! We have completed the Match"
+        flash[:success] = "Ohh! Congratulations!!! You completed the Match"
         redirect_to result_path(:match_id => @match.id)
       end 
     else 
@@ -37,8 +37,13 @@ class GamesController < ApplicationController
     @game.owner_score = 0 
     @game.guest_score = 0.5
     if @game.save 
-      flash[:success] = "Enjoy game"
-    #  redirect_to game_item_path(:game_item_id => @game.game_item.id, :game_id => @game.id)
+      if @match.games.count == 1
+        flash[:success] = "Complete your first round!"
+      elsif @match.games.count == 2
+        flash[:success] = "Your second round!"
+      else 
+        flash[:success] = "Your final round!"
+      end 
       redirect_to display_path(:game_item_id => @game.game_item.id, :game_id => @game.id)
     else 
       flash[:errors] = "#{@game.errors.full_messages.to_sentence}"

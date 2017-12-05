@@ -17,7 +17,7 @@ class MatchesController < ApplicationController
     @match = Match.new(match_params)
     @match.user_id = current_user.id 
     if @match.save 
-      flash[:success] = "Create match successfully"
+      flash[:success] = "Choose game! You have 3 turns in a match!"
       redirect_to new_game_path
     else 
       flash[:error] = "#{@match.errors.full_messages.to_sentence}"
