@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+User.create(first_name: "Quy", last_name: "Nguyen", email: "quy.nguyenngoctp@gmail.com",
+            password: "123", password_confirmation: "123")
 
 #create Users
 10.times do 

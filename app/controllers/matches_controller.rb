@@ -4,9 +4,8 @@ class MatchesController < ApplicationController
 
   def result 
     @match = Match.find(params[:match_id])
-    @line_result = @match.games 
-    @winner = @match.winner 
-    @loser = @match.loser
+    @owner_score = @match.games.map {|e| e.owner_score}.sum 
+    @guest_score = @match.games.map {|e| e.guest_score}.sum 
   end 
 
   def new 

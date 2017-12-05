@@ -1,5 +1,9 @@
 
-<% @line_results.each do |line| %>
-  Owner score: <%= line.owner_score %>
-  Guest score: <%= line.guest_score %>
+
+Owner score: <%= @owner_score %><br>
+Guest score: <%= @guest_score %><br>
+<% if @owner_score != @guest_score %>
+  Winner is <%= @winner = @owner_score > @guest_score ? @match.onwer_team.name : @match.guest_team.name %> team 
+<% else %>
+  Owner team draw guest team 
 <% end %>
