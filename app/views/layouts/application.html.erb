@@ -16,33 +16,18 @@
         <div class="navbar-menu">
           <div class="navbar-start">
             <div class="navbar-item">
-              <%= link_to "All users", users_path %>
+              <%= link_to "Choose teammate", users_path %>
             </div>
             <div class="navbar-item">
-              <%= link_to "All teams",team_plays_path %>
+              <%= link_to "Choose competitor",new_match_path %>
             </div>
             <div class="navbar-item">
-              <%= link_to "All Matches", matches_path %>
-            </div>
-            <div class="navbar-item">
-              <%= link_to "All Game items", game_items_path %>
+              <%= link_to "Choose game",new_game_path %>
             </div>
           </div>
           <div class="navbar-end">
             <div class="navbar-item">
               <%= link_to "Log out", logout_path %>
-            </div>
-            <div class="navbar-item">
-              <%= link_to "Create team",new_team_play_path %>
-            </div>
-            <div class="navbar-item">
-              <%= link_to "Create match",new_match_path %>
-            </div>
-            <div class="navbar-item">
-              <%= link_to "New game",new_game_path %>
-            </div>
-            <div class="navbar-item">
-              <%= link_to "Create Game Item",new_game_item_path %>
             </div>
           </div>
         </div>
