@@ -1,4 +1,3 @@
-<h1>Choose the game you want</h1><br>
 
 <div class="general-form">
   <%= form_for @match.games.new do |f| %>
@@ -8,8 +7,12 @@
         <% group.each do |game_item| %>
           <div class="column">
             <div class="card general_card">
-              <%= f.radio_button :game_item_id, game_item.id %>
-              Game: <%= game_item.name %>
+              <div class="card-header">
+                <div class="card-header-title">
+                  <%= f.radio_button :game_item_id, game_item.id %>
+                  <%= game_item.name %>
+                </div>
+              </div>
               <br>
               Question: <%= game_item.question %>
             </div>
