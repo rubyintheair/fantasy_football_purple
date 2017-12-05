@@ -1,7 +1,7 @@
 Name of game: <%= @game_item.name %><br>
 Question: <%= @game_item.question %><br><br>
 <%= form_for @game do |f| %>
-  <%= f.submit "Submit", class: "button is-primary" %>
+  <%= f.submit "Submit", class: "button is-primary" %><br>
   <% GameItem::ANSWERS.each_with_index do |answer, index| %>
     <%= f.radio_button :answer, index %>
     <%= answer %><br>
